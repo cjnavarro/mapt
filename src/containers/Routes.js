@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as RouteActions from '../actions'
+import { addRoute, deleteRoute}  from '../actions'
 import RouteList from '../components/common/RouteList'
 
 const mapStateToProps = state => ({
@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(RouteActions, dispatch)
+  actions: bindActionCreators({ addRoute, deleteRoute }, dispatch)
 })
 
 
