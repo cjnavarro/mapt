@@ -6,28 +6,44 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Drawer from '@material-ui/core/Drawer';
 
-const Navigation = ({children}) =>
+const Navigation = ({ displayName, children, navigation, actions }) =>
 (
   <div>
     <AppBar className="navigation" position="static">
       <Toolbar>
-        <IconButton color="inherit" aria-label="Menu">
+        <IconButton
+          color="inherit"
+          aria-label="Menu"
+          onClick={() => actions.toggleDrawer()}
+          >
           <MenuIcon />
         </IconButton>
-        <NavLink to="/home">
-          Home
-        </NavLink>
-        <NavLink to="/about">
-          About
-        </NavLink>
         <Typography variant="h6" color="inherit">
-                  News
+          { displayName }
         </Typography>
       </Toolbar>
     </AppBar>
+
+    <Drawer open={navigation.drawerOpen} onClose={f=>f}>
+      Hi
+    </Drawer>
+
     {children}
   </div>
 );
 
 export default Navigation;
+
+
+// <NavLink to="/home">
+//   <Typography variant="h6" color="inherit">
+//     Home
+//   </Typography>
+// </NavLink>
+// <NavLink to="/about">
+//   <Typography variant="h6" color="inherit">
+//     About
+//   </Typography>
+// </NavLink>

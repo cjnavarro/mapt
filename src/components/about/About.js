@@ -1,13 +1,13 @@
 import React from 'react';
-import Navigation from '../common/Navigation';
+import UINavigation from '../../containers/UINavigation'
 import Gear from '../../containers/Gear'
 
 const About = () =>
 (
-  <Navigation>
+  <UINavigation displayName="About">
     <div>About Page</div>
     <Gear/>
-  </Navigation>
+  </UINavigation>
 );
 
 export default About;

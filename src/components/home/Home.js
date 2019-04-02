@@ -1,13 +1,13 @@
 import React from 'react'
-import Navigation from '../common/Navigation'
+import UINavigation from '../../containers/UINavigation'
 import Routes from '../../containers/Routes'
 
 const Home = () =>
 (
-  <Navigation>
+  <UINavigation displayName="Home">
     <div>Home Page</div>
     <Routes/>
-  </Navigation>
+  </UINavigation>
 );
 
 export default Home
