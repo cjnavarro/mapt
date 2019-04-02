@@ -31,7 +31,7 @@ class MapRoute extends MapLayer {
     })
     .addTo(map.current.leafletElement);
 
-    //leafletElement.hide(); // hide road description
+    //leafletElement.hide(true); // hide road description
 
     return leafletElement.getPlan();
   }

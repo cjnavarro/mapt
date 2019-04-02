@@ -11,14 +11,15 @@ const MapTest = () => {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
           />
-        <Marker position={[42.505, -71]}>
-          <Popup>
-            A pretty CSS3 popup. <br/> Easily customizable.
-          </Popup>
-        </Marker>
-        <MapRoute color="#3498DB" from={[42.402571,-71.1181906]} to={[43.3920026,-71.9017829]} map={map}/>
     </Map>
 )
 };
 
 export default MapTest;
+
+// <Marker position={[42.505, -71]}>
+//   <Popup>
+//     A pretty CSS3 popup. <br/> Easily customizable.
+//   </Popup>
+// </Marker>
+// <MapRoute color="#3498DB" from={[42.402571,-71.1181906]} to={[43.3920026,-71.9017829]} map={map}/>

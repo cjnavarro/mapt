@@ -14,6 +14,8 @@ class App extends Component {
         <HashRouter>
           <Switch>
             <Route path="/home" component={Home}/>
+            {/* <Route path="/map" component={MyMap}/>
+            <Route path="/loadout" component={MyLoadout}/>*/}
             <Route path="/about" component={About}/>
             <Route path='/404' component={Error404}/>
             <Redirect exact from="/" to="/home"/>

@@ -1,12 +1,11 @@
 import React from 'react';
 import UINavigation from '../../containers/UINavigation'
-import Gear from '../../containers/Gear'
+import MapTest from '../common/MapTest'
 
 const About = () =>
 (
   <UINavigation displayName="About">
-    <div>About Page</div>
-    <Gear/>
+    <MapTest/>
   </UINavigation>
 );
 

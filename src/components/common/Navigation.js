@@ -105,7 +105,7 @@ const Navigation = ({ displayName, children, navigation, actions, classes, theme
                 <MenuIcon />
               </IconButton>
               <Typography variant="h6" color="inherit" noWrap>
-                {displayName}
+                mapt - {displayName}
               </Typography>
             </Toolbar>
           </AppBar>
