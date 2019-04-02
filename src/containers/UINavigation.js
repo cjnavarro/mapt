@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { toggleDrawer }  from '../actions'
+import { openDrawer, closeDrawer }  from '../actions'
 import Navigation from '../components/common/Navigation'
 
 const mapStateToProps = state => ({
@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators({ toggleDrawer }, dispatch)
+  actions: bindActionCreators({ openDrawer, closeDrawer }, dispatch)
 })
 
 

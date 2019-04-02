@@ -12,4 +12,5 @@ export const deleteGear = () => ({ type: gearActions.DELETE_GEAR })
 export const editGear = (bike, jacket) => ({ type: gearActions.EDIT_GEAR, bike, jacket })
 
 // UIActions
-export const toggleDrawer = () => ({ type: uiActions.TOGGLE_DRAWER })
+export const openDrawer = () => ({ type: uiActions.OPEN_DRAWER })
+export const closeDrawer = () => ({ type: uiActions.CLOSE_DRAWER })

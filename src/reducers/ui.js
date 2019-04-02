@@ -1,5 +1,6 @@
 import {
-  TOGGLE_DRAWER
+  OPEN_DRAWER,
+  CLOSE_DRAWER
 } from '../constants/UIActions'
 
 const initialState = {
@@ -10,12 +11,21 @@ const initialState = {
 
 export default function ui(state = initialState, action) {
   switch (action.type) {
-    case TOGGLE_DRAWER:
+    case OPEN_DRAWER:
       return {
-                ...state, 
+                ...state,
                 navigation: {
                   ...(state.navigation),
-                  drawerOpen: !state.navigation.drawerOpen
+                  drawerOpen: true
+                }
+              }
+
+    case CLOSE_DRAWER:
+      return {
+                ...state,
+                navigation: {
+                  ...(state.navigation),
+                  drawerOpen: false
                 }
               }
 
