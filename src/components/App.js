@@ -4,6 +4,8 @@ import { HashRouter, Route, Switch, Redirect} from 'react-router-dom'
 
 import './App.css'
 import Home from './home/Home'
+import MyMap from './map/MyMap'
+import MyLoadout from './loadout/MyLoadout'
 import About from './about/About'
 import { Error404 } from './common/errors'
 
@@ -14,8 +16,8 @@ class App extends Component {
         <HashRouter>
           <Switch>
             <Route path="/home" component={Home}/>
-            {/* <Route path="/map" component={MyMap}/>
-            <Route path="/loadout" component={MyLoadout}/>*/}
+            <Route path="/map" component={MyMap}/>
+            <Route path="/loadout" component={MyLoadout}/>
             <Route path="/about" component={About}/>
             <Route path='/404' component={Error404}/>
             <Redirect exact from="/" to="/home"/>

@@ -18,6 +18,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Home from '@material-ui/icons/Home';
 import Info from '@material-ui/icons/Info';
+import Public from '@material-ui/icons/Public';
+import Motorcycle from '@material-ui/icons/Motorcycle';
 
 const drawerWidth = 240;
 
@@ -134,6 +136,18 @@ const Navigation = ({ displayName, children, navigation, actions, classes, theme
                 <ListItem button key="Home">
                   <ListItemIcon><Home/></ListItemIcon>
                   <ListItemText primary="Home" />
+                </ListItem>
+              </NavLink>
+              <NavLink to="/map">
+                <ListItem button key="Map">
+                  <ListItemIcon><Public/></ListItemIcon>
+                  <ListItemText primary="Map" />
+                </ListItem>
+              </NavLink>
+              <NavLink to="/loadout">
+                <ListItem button key="Loadout">
+                  <ListItemIcon><Motorcycle/></ListItemIcon>
+                  <ListItemText primary="Loadout" />
                 </ListItem>
               </NavLink>
               <NavLink to="/about">
