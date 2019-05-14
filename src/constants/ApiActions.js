@@ -1,0 +1,2 @@
+export const REQUEST_CALL = 'REQUEST_CALL'
+export const RECIEVE_CALL = 'RECIEVE_CALL'
