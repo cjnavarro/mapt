@@ -1,11 +1,11 @@
 import React from 'react'
 import UINavigation from '../../containers/UINavigation'
-import MapTest from '../common/MapTest'
+import IncidentMap from '../common/IncidentMap'
 
 const MyMap = () =>
 (
   <UINavigation displayName="Map">
-    <MapTest/>
+    <IncidentMap/>
   </UINavigation>
 );
 
