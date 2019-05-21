@@ -20,9 +20,10 @@ export const closeDrawer = () => ({ type: uiActions.CLOSE_DRAWER })
 
 // API actions
 export const exampleGet = (subreddit) => {
-  return dispatch => {
-      dispatch(requestPosts(subreddit))
-      return fetch(`https://www.reddit.com/r/${subreddit}.json`)
+  return (dispatch, getState, {apiFetch}) => {
+      dispatch(requestPosts(subreddit));
+      console.log(apiFetch);
+      return apiFetch(`/account/clusters`, {})
         .then(response => response.json())
         .then(json => dispatch(receivePosts(subreddit, json)))
     }
