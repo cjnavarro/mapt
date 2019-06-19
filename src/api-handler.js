@@ -8,7 +8,7 @@ export default ApiHandler => (url, opts) => {
   const combinedOptions = Object.assign({}, { headers }, opts)
 
   return (
-    fetch('https://ibosstest.com/ibcloud/web' + url, {Authorization: 'Token zV4nUhPvjZvpRPR4ZP98iNQzCTzaRkg43myt7UyzRCwsfc5UhLtRmIW6dxJ2ByGx'})
+    fetch('http://localhost:8080/api/' + url, {Authorization: 'Token myToken'})
       // let's assume we're always getting JSON back
       .then(res => {
         // here we can check for whatever the API does

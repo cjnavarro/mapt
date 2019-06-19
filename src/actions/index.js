@@ -19,21 +19,20 @@ export const openDrawer = () => ({ type: uiActions.OPEN_DRAWER })
 export const closeDrawer = () => ({ type: uiActions.CLOSE_DRAWER })
 
 // API actions
-export const exampleGet = (subreddit) => {
+export const exampleGet = (apiPath) => {
   return (dispatch, getState, {apiFetch}) => {
-      dispatch(requestPosts(subreddit));
+      dispatch(requestPosts(apiPath));
       console.log(apiFetch);
-      return apiFetch(`/account/clusters`, {})
-        .then(response => response.json())
-        .then(json => dispatch(receivePosts(subreddit, json)))
+      return apiFetch(apiPath, {})
+        .then(response => dispatch(receivePosts(apiPath, response)))
     }
 }
 
 const requestPosts = (action) => ({ type: apiActions.REQUEST_CALL, action })
 
-const receivePosts = (subreddit, json) => ({
+const receivePosts = (apiPath, response) => ({
     type: apiActions.RECIEVE_CALL,
-    subreddit,
-    posts: json.data.children.map(child => child.data),
+    apiPath,
+    response,
     receivedAt: Date.now()
 })
