@@ -11,7 +11,6 @@ const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({ addGear, deleteGear, editGear }, dispatch)
 })
 
-
 const Gear = connect(
   mapStateToProps,
   mapDispatchToProps

@@ -4,6 +4,7 @@ import { HashRouter, Route, Switch, Redirect} from 'react-router-dom'
 
 import './App.css'
 import Home from './home/Home'
+import Login from './login/Login'
 import MyMap from './map/MyMap'
 import MyLoadout from './loadout/MyLoadout'
 import About from './about/About'
@@ -19,6 +20,7 @@ class App extends Component {
             <Route path="/map" component={MyMap}/>
             <Route path="/loadout" component={MyLoadout}/>
             <Route path="/about" component={About}/>
+            <Route path='/login' component={Login}/>
             <Route path='/404' component={Error404}/>
             <Redirect exact from="/" to="/home"/>
             <Redirect from="*" to="/404"/>

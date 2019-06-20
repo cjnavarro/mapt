@@ -22,7 +22,6 @@ export const closeDrawer = () => ({ type: uiActions.CLOSE_DRAWER })
 export const exampleGet = (apiPath) => {
   return (dispatch, getState, {apiFetch}) => {
       dispatch(requestPosts(apiPath));
-      console.log(apiFetch);
       return apiFetch(apiPath, {})
         .then(response => dispatch(receivePosts(apiPath, response)))
     }

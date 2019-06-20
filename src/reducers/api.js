@@ -4,7 +4,9 @@ import {
 } from '../constants/ApiActions'
 
 const initialState = {
-    subreddit: 'reactjs'
+  apiPath: '',
+  response: '',
+  receivedAt: Date.now()
 }
 
 export default function gear(state = initialState, action) {
