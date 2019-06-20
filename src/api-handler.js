@@ -27,12 +27,12 @@ export default ApiHandler => (url, opts) => {
         // Now we can call the function
         // in this scenario
         // if (err.message === 'rejected') {
-        //   ApiHandler()
-        //   return
+        ApiHandler()
+        return;
         // }
         // other wise we just want to handle our normal
         // rejection
-        throw err
+        //throw err
       })
   )
 }
