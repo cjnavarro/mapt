@@ -1,9 +1,17 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import  { Redirect } from 'react-router-dom';
 
-const RouteList = ({routes, token, actions}) =>
+const RouteList = ({routes, token, loggedIn, actions}) =>
 {
   const [coordinate, setCoordinate] = useState("");
+
+  // Already authed go home!
+  console.log(loggedIn);
+  if(!loggedIn) {
+    return <Redirect to='/login' />
+  }
+
   return (
     <ul>
       {routes.map(route =>

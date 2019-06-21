@@ -5,7 +5,8 @@ import GearLoadout from '../components/common/GearLoadout'
 
 const mapStateToProps = state => ({
   gear: state.gear,
-  token: state.api.token
+  token: state.api.token,
+  loggedIn: state.api.loggedIn
 })
 
 const mapDispatchToProps = dispatch => ({

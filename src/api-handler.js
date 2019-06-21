@@ -18,13 +18,14 @@ export default ApiHandler => (url, opts, token) => {
         if (res.status === 401) {
           throw Error('rejected');
         }
+        else {
+          // TODO enforce JSON
+          if(url === 'user/auth') {
+            return {};
+          }
 
-        // TODO enforce JSON
-        if(url === 'user/auth') {
-          return {};
+          return res.json();  
         }
-
-        return res.json();
       })
       .catch(err => {
         // Now we can call the function

@@ -17,7 +17,7 @@ const LoginEntry = ({actions, message, loggedIn}) =>
 
   const [open, setOpen] = React.useState(true);
 
-  console.log(message);
+  console.log(loggedIn);
 
   function handleClickOpen() {
     setOpen(true);

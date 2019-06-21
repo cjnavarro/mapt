@@ -5,7 +5,8 @@ import RouteList from '../components/common/RouteList'
 
 const mapStateToProps = state => ({
   routes: state.routes,
-  token: state.api.token
+  token: state.api.token,
+  loggedIn: state.api.loggedIn
 })
 
 const mapDispatchToProps = dispatch => ({
