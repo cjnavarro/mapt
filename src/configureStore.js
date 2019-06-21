@@ -3,7 +3,7 @@ import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import rootReducer from './reducers';
 import ApiHandler from './api-handler';
-import { logout } from './actions';
+import { logout, loginFailure } from './actions';
 
 const loggerMiddleware = createLogger();
 
@@ -13,9 +13,14 @@ const store = createStore(
     applyMiddleware(
       //loggerMiddleware,
       thunkMiddleware.withExtraArgument({
-      apiFetch: ApiHandler(() => {
-        store.dispatch(logout());
-        window.location.href = '/#/login';
+      apiFetch: ApiHandler((url) => {
+        if(url === 'user/auth') {
+          store.dispatch(loginFailure());
+        }
+        else {
+          store.dispatch(logout());
+          window.location.href = '/#/login';
+        }
       })
     }))
   );

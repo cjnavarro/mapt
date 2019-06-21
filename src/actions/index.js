@@ -3,10 +3,6 @@ import * as gearActions from '../constants/GearActions';
 import * as uiActions from '../constants/UIActions';
 import * as apiActions from '../constants/ApiActions';
 
-// App Actions
-export const login = (user, password) => ({ type: apiActions.LOGIN, token: btoa(user + ':' + password)});
-export const logout = () => ({ type: apiActions.LOGOUT});
-
 // RouteActions
 export const addRoute = (from, to) => ({ type: routeActions.ADD_ROUTE, from, to });
 export const deleteRoute = id => ({ type: routeActions.DELETE_ROUTE, id });
@@ -26,7 +22,7 @@ export const exampleGet = (apiPath, token) => {
       dispatch(requestPosts(apiPath));
       return apiFetch(apiPath, {}, token)
         .then(response => dispatch(receivePosts(apiPath, response)))
-    }
+    };
 };
 
 const requestPosts = (action) => ({ type: apiActions.REQUEST_CALL, action });
@@ -37,3 +33,16 @@ const receivePosts = (apiPath, response) => ({
     response,
     receivedAt: Date.now()
 });
+
+export const login = (user, password) => {
+  return (dispatch, getState, {apiFetch}) => {
+      let token = btoa(user + ':' + password)
+      dispatch(requestPosts({apiPath: 'user/auth'}));
+      return apiFetch('user/auth', {}, token)
+        .then(response => dispatch(loginSuccess(token)));
+    };
+};
+export const loginSuccess = (token) => ({ type: apiActions.LOGIN, token});
+export const loginFailure = () => ({ type: apiActions.LOGIN_FAILURE});
+
+export const logout = () => ({ type: apiActions.LOGOUT});

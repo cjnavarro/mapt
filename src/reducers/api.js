@@ -1,11 +1,13 @@
 import {
   REQUEST_CALL,
   RECIEVE_CALL,
-  LOGIN
+  LOGIN,
+  LOGIN_FAILURE
 } from '../constants/ApiActions'
 
 const initialState = {
   token: '',
+  message: '',
   receivedAt: Date.now()
 }
 
@@ -16,7 +18,9 @@ export default function api(state = initialState, action) {
     case RECIEVE_CALL:
       return state;
     case LOGIN:
-      return {token: 'Basic ' + action.token, receivedAt: Date.now()};
+      return {token: action.token, receivedAt: Date.now(), message: ''};
+    case LOGIN_FAILURE:
+      return {token: '', receivedAt: Date.now(), message: 'Authentication Failed'};
     default:
       return state;
   }
