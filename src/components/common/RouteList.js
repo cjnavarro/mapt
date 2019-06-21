@@ -21,7 +21,7 @@ const RouteList = ({routes, token, actions}) =>
       </form>
 
       <button onClick={() => actions.deleteRoute(0)}>Delete ME</button>
-      <button onClick={() => actions.exampleGet('user/auth', token)}> API CALL</button>
+      <button onClick={() => actions.exampleGet('user/all', token)}> API CALL</button>
     </ul>
   )
 }

@@ -5,7 +5,7 @@ import LoginEntry from '../components/common/LoginEntry';
 
 const mapStateToProps = state => ({
   message: state.api.message,
-  token: state.api.token
+  loggedIn: state.api.loggedIn
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -8,6 +8,7 @@ import {
 const initialState = {
   token: '',
   message: '',
+  loggedIn : false,
   receivedAt: Date.now()
 }
 
@@ -18,9 +19,9 @@ export default function api(state = initialState, action) {
     case RECIEVE_CALL:
       return state;
     case LOGIN:
-      return {token: action.token, receivedAt: Date.now(), message: ''};
+      return {token: action.token, receivedAt: Date.now(), message: '', loggedIn: true};
     case LOGIN_FAILURE:
-      return {token: '', receivedAt: Date.now(), message: 'Authentication Failed'};
+      return {token: '', receivedAt: Date.now(), message: 'Authentication Failed', loggedIn: false};
     default:
       return state;
   }

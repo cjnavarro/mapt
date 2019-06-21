@@ -10,7 +10,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-const LoginEntry = ({actions, message, token}) =>
+const LoginEntry = ({actions, message, loggedIn}) =>
 {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
@@ -27,10 +27,8 @@ const LoginEntry = ({actions, message, token}) =>
     setOpen(false);
   }
 
-  console.log(token + ' ' + message);
-
   // Already authed go home!
-  if(token && !message) {
+  if(loggedIn == true) {
     return <Redirect to='/home' />
   }
 

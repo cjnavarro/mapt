@@ -19,8 +19,9 @@ const store = createStore(
         }
         else {
           store.dispatch(logout());
-          window.location.href = '/#/login';
         }
+
+        window.location.href = '/#/login';
       })
     }))
   );
