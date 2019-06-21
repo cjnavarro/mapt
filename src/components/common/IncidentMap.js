@@ -9,6 +9,8 @@ import 'react-leaflet-markercluster/dist/styles.min.css';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
+import  { Redirect } from 'react-router-dom';
+
 let DefaultIcon = L.icon({
     iconUrl: icon,
     shadowUrl: iconShadow
@@ -17,6 +19,11 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const IncidentMap = () => {
+
+  if (!localStorage['Token'])
+  {
+      return <Redirect to='/login'  />
+  }
 
   // Day/Night overlay
   let t = terminator();

@@ -1,37 +1,39 @@
-import fetch from 'cross-fetch'
+import * as routeActions from '../constants/RouteActions';
+import * as gearActions from '../constants/GearActions';
+import * as uiActions from '../constants/UIActions';
+import * as apiActions from '../constants/ApiActions';
 
-import * as routeActions from '../constants/RouteActions'
-import * as gearActions from '../constants/GearActions'
-import * as uiActions from '../constants/UIActions'
-import * as apiActions from '../constants/ApiActions'
+// App Actions
+export const login = (user, password) => ({ type: apiActions.LOGIN, token: btoa(user + ':' + password)});
+export const logout = () => ({ type: apiActions.LOGOUT});
 
 // RouteActions
-export const addRoute = (from, to) => ({ type: routeActions.ADD_ROUTE, from, to })
-export const deleteRoute = id => ({ type: routeActions.DELETE_ROUTE, id })
+export const addRoute = (from, to) => ({ type: routeActions.ADD_ROUTE, from, to });
+export const deleteRoute = id => ({ type: routeActions.DELETE_ROUTE, id });
 
 // GearActions
-export const addGear = gear => ({ type: gearActions.ADD_GEAR, gear })
-export const deleteGear = () => ({ type: gearActions.DELETE_GEAR })
-export const editGear = (bike, jacket) => ({ type: gearActions.EDIT_GEAR, bike, jacket })
+export const addGear = gear => ({ type: gearActions.ADD_GEAR, gear });
+export const deleteGear = () => ({ type: gearActions.DELETE_GEAR });
+export const editGear = (bike, jacket) => ({ type: gearActions.EDIT_GEAR, bike, jacket });
 
 // UIActions
-export const openDrawer = () => ({ type: uiActions.OPEN_DRAWER })
-export const closeDrawer = () => ({ type: uiActions.CLOSE_DRAWER })
+export const openDrawer = () => ({ type: uiActions.OPEN_DRAWER });
+export const closeDrawer = () => ({ type: uiActions.CLOSE_DRAWER });
 
 // API actions
-export const exampleGet = (apiPath) => {
+export const exampleGet = (apiPath, token) => {
   return (dispatch, getState, {apiFetch}) => {
       dispatch(requestPosts(apiPath));
-      return apiFetch(apiPath, {})
+      return apiFetch(apiPath, {}, token)
         .then(response => dispatch(receivePosts(apiPath, response)))
     }
-}
+};
 
-const requestPosts = (action) => ({ type: apiActions.REQUEST_CALL, action })
+const requestPosts = (action) => ({ type: apiActions.REQUEST_CALL, action });
 
 const receivePosts = (apiPath, response) => ({
     type: apiActions.RECIEVE_CALL,
     apiPath,
     response,
     receivedAt: Date.now()
-})
+});

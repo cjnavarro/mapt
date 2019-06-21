@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-const RouteList = ({routes, actions}) =>
+const RouteList = ({routes, token, actions}) =>
 {
   const [coordinate, setCoordinate] = useState("");
   return (
@@ -21,7 +21,7 @@ const RouteList = ({routes, actions}) =>
       </form>
 
       <button onClick={() => actions.deleteRoute(0)}>Delete ME</button>
-      <button onClick={() => actions.exampleGet('user/auth')}> API CALL</button>
+      <button onClick={() => actions.exampleGet('user/auth', token)}> API CALL</button>
     </ul>
   )
 }

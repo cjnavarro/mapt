@@ -4,7 +4,8 @@ import { addRoute, deleteRoute, exampleGet}  from '../actions'
 import RouteList from '../components/common/RouteList'
 
 const mapStateToProps = state => ({
-  routes: state.routes
+  routes: state.routes,
+  token: state.api.token
 })
 
 const mapDispatchToProps = dispatch => ({

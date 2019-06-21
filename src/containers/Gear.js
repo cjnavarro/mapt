@@ -4,7 +4,8 @@ import { addGear, deleteGear, editGear } from '../actions'
 import GearLoadout from '../components/common/GearLoadout'
 
 const mapStateToProps = state => ({
-  gear: state.gear
+  gear: state.gear,
+  token: state.api.token
 })
 
 const mapDispatchToProps = dispatch => ({

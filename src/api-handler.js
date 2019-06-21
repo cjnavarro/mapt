@@ -1,13 +1,13 @@
 import fetch from 'cross-fetch'
 
-export default ApiHandler => (url, opts) => {
+export default ApiHandler => (url, opts, token) => {
 
   //TODO right to localStorage
 
   let headers = new Headers();
 
   headers.append('Content-Type', 'text/json');
-  headers.append('Authorization', 'Basic Q2hyaXMgTmF2YXJybzpwYXNzd29yZA==');
+  headers.append('Authorization', token);
 
   const combinedOptions = Object.assign({}, headers, opts)
 
@@ -15,7 +15,7 @@ export default ApiHandler => (url, opts) => {
     fetch('http://localhost:8080/api/' + url,
       { method:'GET',
         //mode: 'no-cors',
-        headers: {Authorization: 'Basic Q2hyaXMgTmF2YXJybzpwYXNzd29yZA=='}
+        headers: {Authorization: localStorage['Token']}
       })
       // let's assume we're always getting JSON back
       .then(res => {
@@ -23,9 +23,10 @@ export default ApiHandler => (url, opts) => {
         // when it fails auth
         console.log(res);
 
+        localStorage['Token'] = 'Basic Q2hyaXMgTmF2YXJybzpwYXNzd29yZA==';
+
         if (res.status === 401) {
-          window.location.href = '/#/login';
-          return {};
+          throw Error({});
         }
 
         return res.json();

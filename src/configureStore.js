@@ -3,19 +3,23 @@ import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import rootReducer from './reducers';
 import ApiHandler from './api-handler';
+import { logout } from './actions';
 
-//const loggerMiddleware = createLogger()
+const loggerMiddleware = createLogger();
 
-export default function configureStore(preloadedState) {
-  return createStore(
+const store = createStore(
     rootReducer,
-    preloadedState,
-    applyMiddleware(thunkMiddleware.withExtraArgument({
+    {}, // Default state
+    applyMiddleware(
+      //loggerMiddleware,
+      thunkMiddleware.withExtraArgument({
       apiFetch: ApiHandler(() => {
         // here we have access to the store instance!
-        console.log('LOGOUT');
-        //this.dispatch(doLogout())
+        delete localStorage['Token'];
+        store.dispatch(logout());
+        window.location.href = '/#/login';
       })
     }))
-  )
-}
+  );
+
+export default store;

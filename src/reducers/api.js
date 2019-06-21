@@ -1,20 +1,23 @@
 import {
   REQUEST_CALL,
-  RECIEVE_CALL
+  RECIEVE_CALL,
+  LOGIN
 } from '../constants/ApiActions'
 
 const initialState = {
-  apiPath: '',
-  response: '',
+  token: '',
   receivedAt: Date.now()
 }
 
-export default function gear(state = initialState, action) {
+export default function api(state = initialState, action) {
   switch (action.type) {
+    // Fallthrough
     case REQUEST_CALL:
     case RECIEVE_CALL:
-      return state
+      return state;
+    case LOGIN:
+      return {token: action.token};
     default:
-      return state
+      return state;
   }
 }
