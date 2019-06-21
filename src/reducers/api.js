@@ -19,10 +19,8 @@ export default function api(state = initialState, action) {
     case RECIEVE_CALL:
       return state;
     case LOGIN:
-      console.log('YES');
       return {token: action.token, receivedAt: Date.now(), message: '', loggedIn: true};
     case LOGIN_FAILURE:
-      console.log('NO');
       return {token: '', receivedAt: Date.now(), message: 'Authentication Failed', loggedIn: false};
     default:
       return state;

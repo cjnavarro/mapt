@@ -17,8 +17,6 @@ const LoginEntry = ({actions, message, loggedIn}) =>
 
   const [open, setOpen] = React.useState(true);
 
-  console.log(loggedIn);
-
   function handleClickOpen() {
     setOpen(true);
   }
@@ -28,7 +26,7 @@ const LoginEntry = ({actions, message, loggedIn}) =>
   }
 
   // Already authed go home!
-  if(loggedIn == true) {
+  if(loggedIn) {
     return <Redirect to='/home' />
   }
 

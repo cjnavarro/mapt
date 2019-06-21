@@ -7,11 +7,10 @@ export default ApiHandler => (url, opts, token) => {
   return (
     fetch('http://localhost:8080/api/' + url,
       { method:'GET',
-        //mode: 'no-cors',
+        mode: 'no-cors',
         headers: {'Authorization': 'Basic ' + token,
                   'Content-Type': 'text/json'}
       })
-      // let's assume we're always getting JSON back
       .then(res => {
         console.log(res);
 
@@ -24,19 +23,15 @@ export default ApiHandler => (url, opts, token) => {
             return {};
           }
 
-          return res.json();  
+          return res.json();
         }
       })
       .catch(err => {
-        // Now we can call the function
-        // in this scenario
         if (err.message === 'rejected') {
-          ApiHandler(url)
-          return;
+          ApiHandler(url);
         }
-        // other wise we just want to handle our normal
-        // rejection
-        throw err
+
+        throw err;
       })
   )
 }

@@ -6,8 +6,7 @@ const RouteList = ({routes, token, loggedIn, actions}) =>
 {
   const [coordinate, setCoordinate] = useState("");
 
-  // Already authed go home!
-  console.log(loggedIn);
+  // TODO Move to parent classes
   if(!loggedIn) {
     return <Redirect to='/login' />
   }

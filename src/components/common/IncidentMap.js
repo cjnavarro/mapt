@@ -20,10 +20,10 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 const IncidentMap = () => {
 
-  if (!localStorage['Token'])
-  {
-      return <Redirect to='/login'  />
-  }
+  // if (!localStorage['Token'])
+  // {
+  //     return <Redirect to='/login'  />
+  // }
 
   // Day/Night overlay
   let t = terminator();

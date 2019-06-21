@@ -39,7 +39,8 @@ export const login = (user, password) => {
       let token = btoa(user + ':' + password)
       dispatch(requestPosts({apiPath: 'user/auth'}));
       return apiFetch('user/auth', {}, token)
-        .then(response => dispatch(loginSuccess(token)));
+        .then(response => dispatch(loginSuccess(token)))
+        .catch(err => console.warn('Failed Login'));
     };
 };
 export const loginSuccess = (token) => ({ type: apiActions.LOGIN, token});
