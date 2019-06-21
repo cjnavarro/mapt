@@ -11,7 +11,7 @@ const RouteList = ({routes, token, actions}) =>
           From: {route.from[0]}, {route.from[1]} To: {route.to[0]}, {route.to[1]}
         </div>
       )}
-
+      123 {token}
       <form onSubmit={() => actions.addRoute([coordinate, 0], [2,3])}>
         <label>
           Number:

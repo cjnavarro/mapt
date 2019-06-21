@@ -14,8 +14,6 @@ const store = createStore(
       //loggerMiddleware,
       thunkMiddleware.withExtraArgument({
       apiFetch: ApiHandler(() => {
-        // here we have access to the store instance!
-        delete localStorage['Token'];
         store.dispatch(logout());
         window.location.href = '/#/login';
       })
