@@ -8,6 +8,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const LoginContainer = connect(
+  null,
   mapDispatchToProps
 )(LoginEntry);
 

@@ -16,7 +16,7 @@ export default function api(state = initialState, action) {
     case RECIEVE_CALL:
       return state;
     case LOGIN:
-      return {token: action.token};
+      return {token: 'Basic ' + action.token};
     default:
       return state;
   }
