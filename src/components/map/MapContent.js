@@ -1,15 +1,15 @@
 import React from 'react';
+import  { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import { Map, Marker, TileLayer, LayerGroup } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import L from 'leaflet';
 import terminator from 'leaflet-terminator';
 import 'leaflet/dist/leaflet.css';
 import 'react-leaflet-markercluster/dist/styles.min.css';
-
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
-
-import  { Redirect } from 'react-router-dom';
 
 let DefaultIcon = L.icon({
     iconUrl: icon,
@@ -18,12 +18,11 @@ let DefaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
-const IncidentMap = () => {
+const MapContent = ({actions, token, loggedIn}) => {
 
-  // if (!localStorage['Token'])
-  // {
-  //     return <Redirect to='/login'  />
-  // }
+  if(!loggedIn) {
+    return (<Redirect to='/login' />);
+  }
 
   // Day/Night overlay
   let t = terminator();
@@ -53,4 +52,10 @@ const IncidentMap = () => {
     </Map>
 )};
 
-export default IncidentMap;
+MapContent.propTypes = {
+  actions: PropTypes.object.isRequired,
+  token: PropTypes.string.isRequired,
+  loggedIn: PropTypes.bool.isRequired,
+};
+
+export default MapContent;

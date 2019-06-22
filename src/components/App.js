@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import { HashRouter, Route, Switch, Redirect} from 'react-router-dom'
+import React, { Component } from 'react';
+import { HashRouter, Route, Switch, Redirect} from 'react-router-dom';
 
-import './App.css'
-import Home from './home/Home'
-import Login from './login/Login'
-import MyMap from './map/MyMap'
-import MyLoadout from './loadout/MyLoadout'
-import About from './about/About'
-import { Error404 } from './common/errors'
+import './App.css';
+import Home from './home/Home';
+import Login from './login/Login';
+import Map from './map/Map';
+import Resources from './resources/Resources';
+import About from './about/About';
+import Error404 from './common/Error404';
 
 class App extends Component {
   render() {
@@ -16,8 +16,8 @@ class App extends Component {
         <HashRouter>
           <Switch>
             <Route path="/home" component={Home}/>
-            <Route path="/map" component={MyMap}/>
-            <Route path="/loadout" component={MyLoadout}/>
+            <Route path="/map" component={Map}/>
+            <Route path="/resources" component={Resources}/>
             <Route path="/about" component={About}/>
             <Route path='/login' component={Login}/>
             <Route path='/404' component={Error404}/>
@@ -27,7 +27,7 @@ class App extends Component {
         </HashRouter>
       </div>
     );
-  }
-}
+  };
+};
 
 export default App;

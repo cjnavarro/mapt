@@ -1,11 +1,11 @@
 import React from 'react';
 import Navigation from '../common/Navigation';
-import IncidentMap from '../common/IncidentMap';
+import MapContent from '../map/MapContent';
 
-const MyMap = () => (
+const Map = () => (
   <Navigation displayName="Map">
-    <IncidentMap/>
+    <MapContent/>
   </Navigation>
 );
 
-export default MyMap;
+export default Map;

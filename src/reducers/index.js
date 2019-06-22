@@ -1,13 +1,11 @@
 import { combineReducers } from 'redux';
 import api from './api';
-import routes from './routes';
 import gear from './gear';
 
 const LOGOUT = 'index/LOGOUT';
 
 const appReducer = combineReducers({
   api,
-  routes,
   gear
 });
 

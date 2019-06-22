@@ -147,10 +147,10 @@ const Navigation = ({ displayName, children, classes, theme}) => {
               <ListItemText primary="Map" />
             </ListItem>
           </NavLink>
-          <NavLink to="/loadout">
-            <ListItem button key="Loadout">
+          <NavLink to="/resources">
+            <ListItem button key="Resources">
               <ListItemIcon><Motorcycle/></ListItemIcon>
-              <ListItemText primary="Loadout" />
+              <ListItemText primary="Resources" />
             </ListItem>
           </NavLink>
           <NavLink to="/about">

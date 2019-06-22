@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { exampleGet } from '../reducers/api';
-import HomeContent from '../components/home/HomeContent';
+import ResourcesContent from '../components/resources/ResourcesContent';
 
 const mapStateToProps = state => ({
   token: state.api.token,
@@ -9,12 +8,12 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators({ exampleGet }, dispatch)
+  actions: bindActionCreators({}, dispatch)
 });
 
-const HomeContainer = connect(
+const ResourcesContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomeContent);
+)(ResourcesContent);
 
-export default HomeContainer;
+export default ResourcesContainer;

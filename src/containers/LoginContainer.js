@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { login } from '../reducers/api';
-import LoginEntry from '../components/login/LoginEntry';
+import LoginContent from '../components/login/LoginContent';
 
 const mapStateToProps = state => ({
   message: state.api.message,
@@ -15,6 +15,6 @@ const mapDispatchToProps = dispatch => ({
 const LoginContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(LoginEntry);
+)(LoginContent);
 
 export default LoginContainer;
