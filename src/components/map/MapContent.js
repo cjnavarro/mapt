@@ -2,27 +2,33 @@ import React from 'react';
 import  { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { Map, Marker, TileLayer, LayerGroup } from 'react-leaflet';
+import { Map, Marker, TileLayer, LayerGroup, Popup } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import L from 'leaflet';
 import terminator from 'leaflet-terminator';
 import 'leaflet/dist/leaflet.css';
 import 'react-leaflet-markercluster/dist/styles.min.css';
 import icon from 'leaflet/dist/images/marker-icon.png';
+import iconRetina from 'leaflet/dist/images/marker-icon-2x.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
+// leaflet-react markers broken out of box
 let DefaultIcon = L.icon({
+    iconRetinaUrl: iconRetina,
     iconUrl: icon,
-    shadowUrl: iconShadow
+    shadowUrl: iconShadow,
+    //iconSize: [41, 51],
+    iconAnchor: [20, 51],
+    popupAnchor: [-7, -51]
 });
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const MapContent = ({actions, token, loggedIn}) => {
 
-  if(!loggedIn) {
-    return (<Redirect to='/login' />);
-  }
+  // if(!loggedIn) {
+  //   return (<Redirect to='/login' />);
+  // }
 
   // Day/Night overlay
   let t = terminator();
@@ -35,7 +41,7 @@ const MapContent = ({actions, token, loggedIn}) => {
   });
 
   return (
-    <Map className="map" center={[42.505, -71]} minZoom={2} maxZoom={7} maxBounds={L.latLngBounds([-90, -180], [90, 180])} zoom={2}>
+    <Map className="map" center={[42.505, -71]} minZoom={2} maxZoom={12} maxBounds={L.latLngBounds([-90, -180], [90, 180])} zoom={6}>
       <TileLayer url='https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png'/>
       <LayerGroup ref={(map) => {
         if(map)
@@ -44,10 +50,24 @@ const MapContent = ({actions, token, loggedIn}) => {
         }
         }}/>
       <MarkerClusterGroup>
-        <Marker position={[49.8397, 24.0297]} />
-        <Marker position={[49.8497, 24.0307]} />
-        <Marker position={[52.2297, 21.0122]} />
-        <Marker position={[51.5074, -0.0901]} />
+        <Marker position={[42.354940, -71.056590]}>
+          <Popup><div>iboss</div></Popup>
+        </Marker>
+        <Marker position={[42.273960, -71.809680]}>
+          <Popup><div>WPI</div></Popup>
+        </Marker>
+        <Marker position={[43.392070, -71.900200]}>
+          <Popup><div>Hometown</div></Popup>
+        </Marker>
+        <Marker position={[55.797200, 37.531920]}>
+          <Popup><div>WPI IQP</div></Popup>
+        </Marker>
+        <Marker position={[18.401430, -66.046710]}>
+          <Popup><div>Vacation</div></Popup>
+        </Marker>
+        <Marker position={[55.953251, -3.188267]}>
+          <Popup><div>Vacation</div></Popup>
+        </Marker>
       </MarkerClusterGroup>
     </Map>
 )};
