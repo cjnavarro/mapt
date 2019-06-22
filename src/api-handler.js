@@ -5,11 +5,13 @@ export default ApiHandler => (url, opts, token) => {
   //const combinedOptions = Object.assign({}, {}, opts)
 
   return (
-    fetch('http://localhost:8080/api/' + url,
+    fetch('/api/' + url,
       { method:'GET',
         mode: 'no-cors',
-        headers: {'Authorization': 'Basic ' + token,
-                  'Content-Type': 'text/json'}
+        headers: {
+          "X-Requested-With": "XMLHttpRequest",
+          'Authorization': 'Basic ' + token,
+          'Content-Type': 'text/json'}
       })
       .then(res => {
         console.log(res);
