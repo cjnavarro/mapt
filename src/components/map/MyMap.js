@@ -1,12 +1,11 @@
-import React from 'react'
-import UINavigation from '../../containers/UINavigation'
-import IncidentMap from '../common/IncidentMap'
+import React from 'react';
+import Navigation from '../common/Navigation';
+import IncidentMap from '../common/IncidentMap';
 
-const MyMap = () =>
-(
-  <UINavigation displayName="Map">
+const MyMap = () => (
+  <Navigation displayName="Map">
     <IncidentMap/>
-  </UINavigation>
+  </Navigation>
 );
 
-export default MyMap
+export default MyMap;

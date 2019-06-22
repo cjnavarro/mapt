@@ -1,13 +1,11 @@
 import React from 'react';
-import UINavigation from '../../containers/UINavigation';
-import Typography from '@material-ui/core/Typography';
+import Navigation from '../common/Navigation';
 import LoginContainer from '../../containers/LoginContainer';
 
-const Login = () =>
-(
-  <UINavigation displayName="Login">
+const Login = () => (
+  <Navigation displayName="Login">
     <LoginContainer/>
-  </UINavigation>
+  </Navigation>
 );
 
 export default Login;

@@ -1,11 +1,11 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import { createLogger } from 'redux-logger';
+//import { createLogger } from 'redux-logger';
 import rootReducer from './reducers';
 import ApiHandler from './api-handler';
 import { logout, loginFailure } from './actions';
 
-const loggerMiddleware = createLogger();
+//const loggerMiddleware = createLogger();
 
 const store = createStore(
     rootReducer,

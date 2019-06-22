@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
@@ -85,96 +85,88 @@ const styles = theme => ({
   },
 });
 
-const Navigation = ({ displayName, children, navigation, actions, classes, theme}) =>
-(
-  <div className={classes.root}>
-          <CssBaseline />
-          <AppBar
-            position="fixed"
-            className={classNames(classes.appBar, {
-              [classes.appBarShift]: navigation.drawerOpen,
+const Navigation = ({ displayName, children, classes, theme}) => {
+
+  const [openDrawer, setOpenDrawer] = useState(false);
+
+  return (
+    <div className={classes.root}>
+      <CssBaseline />
+      <AppBar
+        position="fixed"
+        className={classNames(classes.appBar, {
+          [classes.appBarShift]: openDrawer,
+        })}
+        >
+        <Toolbar disableGutters={!openDrawer}>
+          <IconButton
+            color="inherit"
+            aria-label="Open drawer"
+            onClick={() => setOpenDrawer(!openDrawer)}
+            className={classNames(classes.menuButton, {
+              [classes.hide]: openDrawer,
             })}
-          >
-            <Toolbar disableGutters={!navigation.drawerOpen}>
-              <IconButton
-                color="inherit"
-                aria-label="Open drawer"
-                onClick={actions.openDrawer}
-                className={classNames(classes.menuButton, {
-                  [classes.hide]: navigation.drawerOpen,
-                })}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Typography variant="h6" color="inherit" noWrap>
-                mapt - {displayName}
-              </Typography>
-            </Toolbar>
-          </AppBar>
-          <Drawer
-            variant="permanent"
-            className={classNames(classes.drawer, {
-              [classes.drawerOpen]: navigation.drawerOpen,
-              [classes.drawerClose]: !navigation.drawerOpen,
-            })}
-            classes={{
-              paper: classNames({
-                [classes.drawerOpen]: navigation.drawerOpen,
-                [classes.drawerClose]: !navigation.drawerOpen,
-              }),
-            }}
-            open={navigation.drawerOpen}
-          >
-            <div className={classes.toolbar}>
-              <IconButton onClick={actions.closeDrawer}>
-                {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-              </IconButton>
-            </div>
-            <Divider />
-            <List>
-              <NavLink to="/home">
-                <ListItem button key="Home">
-                  <ListItemIcon><Home/></ListItemIcon>
-                  <ListItemText primary="Home" />
-                </ListItem>
-              </NavLink>
-              <NavLink to="/map">
-                <ListItem button key="Map">
-                  <ListItemIcon><Public/></ListItemIcon>
-                  <ListItemText primary="Map" />
-                </ListItem>
-              </NavLink>
-              <NavLink to="/loadout">
-                <ListItem button key="Loadout">
-                  <ListItemIcon><Motorcycle/></ListItemIcon>
-                  <ListItemText primary="Loadout" />
-                </ListItem>
-              </NavLink>
-              <NavLink to="/about">
-                <ListItem button key="About">
-                  <ListItemIcon><Info/></ListItemIcon>
-                  <ListItemText primary="About" />
-                </ListItem>
-              </NavLink>
-            </List>
-          </Drawer>
-          <main className={classes.content}>
-            <div className={classes.toolbar} />
-            {children}
-          </main>
+            >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" color="inherit" noWrap>
+            mapt - {displayName}
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Drawer
+        variant="permanent"
+        className={classNames(classes.drawer, {
+          [classes.drawerOpen]: openDrawer,
+          [classes.drawerClose]: !openDrawer,
+        })}
+        classes={{
+          paper: classNames({
+            [classes.drawerOpen]: openDrawer,
+            [classes.drawerClose]: !openDrawer,
+          }),
+        }}
+        open={openDrawer}
+        >
+        <div className={classes.toolbar}>
+          <IconButton onClick={() => setOpenDrawer(false)}>
+            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+          </IconButton>
         </div>
-)
+        <Divider />
+        <List>
+          <NavLink to="/home">
+            <ListItem button key="Home">
+              <ListItemIcon><Home/></ListItemIcon>
+              <ListItemText primary="Home" />
+            </ListItem>
+          </NavLink>
+          <NavLink to="/map">
+            <ListItem button key="Map">
+              <ListItemIcon><Public/></ListItemIcon>
+              <ListItemText primary="Map" />
+            </ListItem>
+          </NavLink>
+          <NavLink to="/loadout">
+            <ListItem button key="Loadout">
+              <ListItemIcon><Motorcycle/></ListItemIcon>
+              <ListItemText primary="Loadout" />
+            </ListItem>
+          </NavLink>
+          <NavLink to="/about">
+            <ListItem button key="About">
+              <ListItemIcon><Info/></ListItemIcon>
+              <ListItemText primary="About" />
+            </ListItem>
+          </NavLink>
+        </List>
+      </Drawer>
+      <main className={classes.content}>
+        <div className={classes.toolbar} />
+        {children}
+      </main>
+    </div>
+  )
+};
 
 export default withStyles(styles, { withTheme: true })(Navigation);
-
-
-// <NavLink to="/home">
-//   <Typography variant="h6" color="inherit">
-//     Home
-//   </Typography>
-// </NavLink>
-// <NavLink to="/about">
-//   <Typography variant="h6" color="inherit">
-//     About
-//   </Typography>
-// </NavLink>

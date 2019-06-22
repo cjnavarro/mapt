@@ -44,7 +44,7 @@ const LoginEntry = ({actions, message, loggedIn}) =>
             type="password"
             fullWidth
             onKeyDown={(event) => {
-              if (event.keyCode == '13') {
+              if (event.keyCode === '13') {
                 actions.login(user, password)
               }
             }}

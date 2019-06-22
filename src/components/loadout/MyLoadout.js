@@ -1,12 +1,11 @@
-import React from 'react'
-import UINavigation from '../../containers/UINavigation'
-import Gear from '../../containers/Gear'
+import React from 'react';
+import Navigation from '../common/Navigation';
+import Gear from '../../containers/Gear';
 
-const MyLoadout = () =>
-(
-  <UINavigation displayName="Loadout">
+const MyLoadout = () => (
+  <Navigation displayName="Loadout">
     <Gear/>
-  </UINavigation>
+  </Navigation>
 );
 
 export default MyLoadout

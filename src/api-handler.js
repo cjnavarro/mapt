@@ -2,7 +2,7 @@ import fetch from 'cross-fetch'
 
 export default ApiHandler => (url, opts, token) => {
 
-  const combinedOptions = Object.assign({}, {}, opts)
+  //const combinedOptions = Object.assign({}, {}, opts)
 
   return (
     fetch('http://localhost:8080/api/' + url,
