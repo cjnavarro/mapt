@@ -41,7 +41,7 @@ const MapContent = ({actions, token, loggedIn}) => {
   });
 
   return (
-    <Map className="map" center={[42.505, -71]} minZoom={2} maxZoom={12} maxBounds={L.latLngBounds([-90, -180], [90, 180])} zoom={6}>
+    <Map className="map" center={[42.505, -71]} minZoom={2} maxZoom={12} maxBounds={L.latLngBounds([-90, -180], [90, 180])} zoom={2}>
       <TileLayer url='https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png'/>
       <LayerGroup ref={(map) => {
         if(map)

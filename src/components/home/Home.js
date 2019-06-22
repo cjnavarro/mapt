@@ -4,7 +4,6 @@ import HomeContainer from '../../containers/HomeContainer';
 
 const Home = () => (
   <Navigation displayName="Home">
-    <div>Home Page</div>
     <HomeContainer/>
   </Navigation>
 );

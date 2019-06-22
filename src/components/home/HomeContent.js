@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import  { Redirect } from 'react-router-dom';
+import Typography from '@material-ui/core/Typography';
 
 const HomeContent = ({actions, token, loggedIn}) =>
 {
@@ -9,9 +10,12 @@ const HomeContent = ({actions, token, loggedIn}) =>
   }
 
   return (
-    <ul>
+    <div>
+      <Typography variant="h5" paragraph={true}>
+        Welcome Chris!
+      </Typography>
       <button onClick={() => actions.exampleGet('user/all', token)}>AUTHED API CALL</button>
-    </ul>
+    </div>
   );
 };
 
