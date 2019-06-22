@@ -3,7 +3,8 @@ import thunkMiddleware from 'redux-thunk';
 //import { createLogger } from 'redux-logger';
 import rootReducer from './reducers';
 import ApiHandler from './api-handler';
-import { logout, loginFailure } from './actions';
+import { loginFailure } from './reducers/api';
+import { logout } from './reducers/index';
 
 //const loggerMiddleware = createLogger();
 

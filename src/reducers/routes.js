@@ -1,7 +1,5 @@
-import {
-  ADD_ROUTE,
-  DELETE_ROUTE
-} from '../constants/RouteActions'
+const ADD_ROUTE = 'ADD_ROUTE';
+const DELETE_ROUTE = 'DELETE_ROUTE';
 
 const initialState = [
   {
@@ -10,7 +8,7 @@ const initialState = [
     timestamp: new Date(),
     id: 0
   }
-]
+];
 
 export default function routes(state = initialState, action) {
   switch (action.type) {
@@ -33,4 +31,8 @@ export default function routes(state = initialState, action) {
     default:
       return state
   }
-}
+};
+
+export const addRoute = (from, to) => ({ type: ADD_ROUTE, from, to });
+
+export const deleteRoute = id => ({ type: DELETE_ROUTE, id });

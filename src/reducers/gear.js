@@ -1,8 +1,6 @@
-import {
-  ADD_GEAR,
-  DELETE_GEAR,
-  EDIT_GEAR
-} from '../constants/GearActions'
+const ADD_GEAR = 'ADD_GEAR';
+const DELETE_GEAR = 'DELETE_GEAR';
+const EDIT_GEAR = 'EDIT_GEAR';
 
 const initialState = {
     bike: {
@@ -11,7 +9,7 @@ const initialState = {
       year: 2017
     },
     jacket: 'Revit'
-}
+};
 
 export default function gear(state = initialState, action) {
   switch (action.type) {
@@ -27,4 +25,10 @@ export default function gear(state = initialState, action) {
     default:
       return state
   }
-}
+};
+
+export const addGear = gear => ({ type: ADD_GEAR, gear });
+
+export const deleteGear = () => ({ type: DELETE_GEAR });
+
+export const editGear = (bike, jacket) => ({ type: EDIT_GEAR, bike, jacket });

@@ -1,21 +1,21 @@
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { addGear, deleteGear, editGear } from '../actions'
-import GearLoadout from '../components/common/GearLoadout'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { addGear, deleteGear, editGear } from '../reducers/gear';
+import GearLoadout from '../components/common/GearLoadout';
 
 const mapStateToProps = state => ({
   gear: state.gear,
   token: state.api.token,
   loggedIn: state.api.loggedIn
-})
+});
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({ addGear, deleteGear, editGear }, dispatch)
-})
+});
 
 const Gear = connect(
   mapStateToProps,
   mapDispatchToProps
-)(GearLoadout)
+)(GearLoadout);
 
-export default Gear
+export default Gear;
