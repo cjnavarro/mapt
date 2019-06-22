@@ -14,9 +14,9 @@ const mapDispatchToProps = dispatch => ({
 })
 
 
-const Routes = connect(
+const HomeContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(RouteList)
 
-export default Routes
+export default HomeContainer

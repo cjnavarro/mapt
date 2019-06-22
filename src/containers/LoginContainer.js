@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { login } from '../actions';
-import LoginEntry from '../components/common/LoginEntry';
+import LoginEntry from '../components/login/LoginEntry';
 
 const mapStateToProps = state => ({
   message: state.api.message,

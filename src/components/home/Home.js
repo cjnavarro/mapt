@@ -1,12 +1,12 @@
 import React from 'react'
 import UINavigation from '../../containers/UINavigation'
-import Routes from '../../containers/Routes'
+import HomeContainer from '../../containers/HomeContainer'
 
 const Home = () =>
 (
   <UINavigation displayName="Home">
     <div>Home Page</div>
-    <Routes/>
+    <HomeContainer/>
   </UINavigation>
 );
 

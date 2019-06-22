@@ -17,22 +17,14 @@ const LoginEntry = ({actions, message, loggedIn}) =>
 
   const [open, setOpen] = React.useState(true);
 
-  function handleClickOpen() {
-    setOpen(true);
-  }
-
-  function handleClose() {
-    setOpen(false);
-  }
-
-  // Already authed go home!
+  // Already authed go home
   if(loggedIn) {
     return <Redirect to='/home' />
   }
 
   return (
     <div>
-      <Dialog open={open} onClose={handleClose}
+      <Dialog open={open} onClose={() => setOpen(false)}
         aria-labelledby="form-dialog-title"
         disableBackdropClick={true}>
         <DialogTitle id="form-dialog-title">Login</DialogTitle>
@@ -49,8 +41,14 @@ const LoginEntry = ({actions, message, loggedIn}) =>
             onChange={(e) => setPassword(e.target.value)}
             margin="dense"
             label="Password"
+            type="password"
             fullWidth
-          />
+            onKeyDown={(event) => {
+              if (event.keyCode == '13') {
+                actions.login(user, password)
+              }
+            }}
+            />
           <DialogContentText>
             { message }
           </DialogContentText>
@@ -66,7 +64,9 @@ const LoginEntry = ({actions, message, loggedIn}) =>
 }
 
 LoginEntry.propTypes = {
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  message: PropTypes.string.isRequired,
+  loggedIn: PropTypes.bool.isRequired
 }
 
 export default LoginEntry
