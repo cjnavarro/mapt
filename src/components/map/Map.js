@@ -1,10 +1,10 @@
 import React from 'react';
 import Navigation from '../common/Navigation';
-import MapContent from '../map/MapContent';
+import MapContainer from '../../containers/MapContainer';
 
 const Map = () => (
   <Navigation displayName="Map">
-    <MapContent/>
+    <MapContainer/>
   </Navigation>
 );
 

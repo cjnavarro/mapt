@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { exampleGet } from '../reducers/api';
+//import { exampleGet } from '../reducers/api';
 import MapContent from '../components/map/MapContent';
 
 const mapStateToProps = state => ({
