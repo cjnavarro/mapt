@@ -26,9 +26,9 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 const MapContent = ({actions, token, loggedIn}) => {
 
-  // if(!loggedIn) {
-  //   return (<Redirect to='/login' />);
-  // }
+  if(!loggedIn) {
+    return (<Redirect to='/login' />);
+  }
 
   // Day/Night overlay
   let t = terminator();
