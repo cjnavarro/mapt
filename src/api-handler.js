@@ -9,8 +9,7 @@ export default ApiHandler => (url, opts, token) => {
       { method:'GET',
         mode: 'no-cors',
         headers: {
-          "X-Requested-With": "XMLHttpRequest",
-          'Authorization': 'Basic ' + token,
+          'Authorization': 'PumpkinSpice ' + token,
           'Content-Type': 'text/json'}
       })
       .then(res => {
