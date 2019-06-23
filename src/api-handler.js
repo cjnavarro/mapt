@@ -7,7 +7,7 @@ export default ApiHandler => (url, opts, token) => {
   //const combinedOptions = Object.assign({}, {}, opts)
 
   return (
-    fetch('/api/' + url,
+    fetch('http://localhost:80/api/' + url,
       { method:'GET',
         mode: 'no-cors',
         headers: {
@@ -15,7 +15,7 @@ export default ApiHandler => (url, opts, token) => {
           'Content-Type': 'text/json'}
       })
       .then(res => {
-        console.log(res);
+        //console.log(res);
 
         if (res.status === 401) {
           throw Error('rejected');

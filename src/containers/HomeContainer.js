@@ -5,7 +5,8 @@ import HomeContent from '../components/home/HomeContent';
 
 const mapStateToProps = state => ({
   token: state.api.token,
-  loggedIn: state.api.loggedIn
+  loggedIn: state.api.loggedIn,
+  user: state.api.user
 });
 
 const mapDispatchToProps = dispatch => ({

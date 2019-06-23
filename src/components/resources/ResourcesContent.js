@@ -13,7 +13,6 @@ const ResourcesContent = ({actions, token, loggedIn}) => {
 
   return (
     <div>
-      Resources PDF Example
       <PdfViewer file={pdf}/>
     </div>
   );

@@ -13,15 +13,16 @@ const HomeContent = ({actions, token, loggedIn, user}) =>
   }
 
   // load user
-  if(!user)
+  if(!user || !user.username)
   {
     actions.sendGet(GET_CURRENT_USER, token, RECIEVE_USER)
+    return (<div>NO USER...</div>);
   }
 
   return (
     <div>
       <Typography variant="h5" paragraph={true}>
-        Welcome {user.username}!
+        Welcome { user.username.toUpperCase() }!
       </Typography>
     </div>
   );
@@ -29,6 +30,7 @@ const HomeContent = ({actions, token, loggedIn, user}) =>
 
 HomeContent.propTypes = {
   actions: PropTypes.object.isRequired,
+  user: PropTypes.object.isRequired,
   token: PropTypes.string.isRequired,
   loggedIn: PropTypes.bool.isRequired,
 };

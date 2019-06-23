@@ -24,15 +24,35 @@ export default function api(state = initialState, action) {
   switch (action.type) {
     // Fallthrough
     case REQUEST_CALL:
-      return {apiPath, ...state};
+      console.log(apiPath + " " + state.loggedIn);
+      return { ...state, apiPath };
     case RECIEVE_CALL:
       return state;
     case RECIEVE_USER:
-      return {user: action.response, apiPath, receivedAt: Date.now(), ...state}
+      return {
+        ...state,
+        user: action.response,
+        apiPath,
+        receivedAt: Date.now()}
     case LOGIN:
-      return {token: action.token, receivedAt: Date.now(), message: '', loggedIn: true};
+      return {
+        ...state,
+        token: action.token,
+        apiPath,
+        receivedAt: Date.now(),
+        message: '',
+        loggedIn: true,
+        user: {}
+      };
     case LOGIN_FAILURE:
-      return {token: '', receivedAt: Date.now(), message: 'Authentication Failed', loggedIn: false};
+      return {
+        token: '',
+        apiPath,
+        receivedAt: Date.now(),
+        message: 'Authentication Failed',
+        loggedIn: false,
+        user: {}
+      };
     default:
       return state;
   }
