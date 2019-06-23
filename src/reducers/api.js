@@ -24,7 +24,6 @@ export default function api(state = initialState, action) {
   switch (action.type) {
     // Fallthrough
     case REQUEST_CALL:
-      console.log(apiPath + " " + state.loggedIn);
       return { ...state, apiPath };
     case RECIEVE_CALL:
       return state;
