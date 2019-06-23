@@ -12,6 +12,7 @@
     "leaflet-routing-machine": "^3.2.12",
     "leaflet-terminator": "^0.1.0",
     "leaflet.markercluster": "^1.4.1",
+    "mgr-pdf-viewer-react": "^1.0.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-leaflet": "^1.4.0",

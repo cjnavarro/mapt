@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import  { Redirect } from 'react-router-dom';
 
+import PdfViewer from '../common/PdfViewer';
+import pdf from '../common/images/example.pdf';
+
 const ResourcesContent = ({actions, token, loggedIn}) => {
   // TODO Move to parent classes
   if(!loggedIn) {
@@ -10,9 +13,10 @@ const ResourcesContent = ({actions, token, loggedIn}) => {
 
   return (
     <div>
-      Resources Content
+      Resources PDF Example
+      <PdfViewer file={pdf}/>
     </div>
-  )
+  );
 };
 
 ResourcesContent.propTypes = {

@@ -1,10 +1,12 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 //import { createLogger } from 'redux-logger';
+
 import rootReducer from './reducers';
 import ApiHandler from './api-handler';
 import { loginFailure } from './reducers/api';
 import { logout } from './reducers/index';
+import { LOGIN_CALL } from './constants/ApiCalls';
 
 //const loggerMiddleware = createLogger();
 
@@ -15,7 +17,7 @@ const store = createStore(
       //loggerMiddleware,
       thunkMiddleware.withExtraArgument({
       apiFetch: ApiHandler((url) => {
-        if(url === 'user/auth') {
+        if(url === LOGIN_CALL) {
           store.dispatch(loginFailure());
         }
         else {

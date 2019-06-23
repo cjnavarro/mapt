@@ -1,5 +1,7 @@
 import fetch from 'cross-fetch'
 
+import { LOGIN_CALL } from './constants/ApiCalls';
+
 export default ApiHandler => (url, opts, token) => {
 
   //const combinedOptions = Object.assign({}, {}, opts)
@@ -20,7 +22,7 @@ export default ApiHandler => (url, opts, token) => {
         }
         else {
           // TODO enforce JSON
-          if(url === 'user/auth') {
+          if(url === LOGIN_CALL) {
             return {};
           }
 

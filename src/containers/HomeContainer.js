@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { exampleGet } from '../reducers/api';
+import { sendGet } from '../reducers/api';
 import HomeContent from '../components/home/HomeContent';
 
 const mapStateToProps = state => ({
@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators({ exampleGet }, dispatch)
+  actions: bindActionCreators({ sendGet }, dispatch)
 });
 
 const HomeContainer = connect(

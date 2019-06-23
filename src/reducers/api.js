@@ -1,21 +1,34 @@
+import { LOGIN_CALL } from '../constants/ApiCalls';
+
 const REQUEST_CALL = 'api/REQUEST_CALL';
 const RECIEVE_CALL = 'api/RECIEVE_CALL';
+
 const LOGIN = 'api/LOGIN';
 const LOGIN_FAILURE = 'api/LOGIN_FAILURE';
+
+// Recieve strategies
+export const RECIEVE_USER = 'api/RECIEVE_USER';
 
 const initialState = {
   token: '',
   message: '',
   loggedIn : false,
+  apiPath: '',
+  user: {},
   receivedAt: Date.now()
 };
 
 export default function api(state = initialState, action) {
+  const apiPath = action.apiPath;
+
   switch (action.type) {
     // Fallthrough
     case REQUEST_CALL:
+      return {apiPath, ...state};
     case RECIEVE_CALL:
       return state;
+    case RECIEVE_USER:
+      return {user: action.response, apiPath, receivedAt: Date.now(), ...state}
     case LOGIN:
       return {token: action.token, receivedAt: Date.now(), message: '', loggedIn: true};
     case LOGIN_FAILURE:
@@ -25,18 +38,18 @@ export default function api(state = initialState, action) {
   }
 };
 
-export const exampleGet = (apiPath, token) => {
+export const sendGet = (apiPath, token, receiveAction=RECIEVE_CALL) => {
   return (dispatch, getState, {apiFetch}) => {
-      dispatch(requestPosts(apiPath));
+      dispatch(requestGet(apiPath));
       return apiFetch(apiPath, {}, token)
-        .then(response => dispatch(receivePosts(apiPath, response)))
+        .then(response => dispatch(receiveGet(apiPath, response, receiveAction)))
     };
 };
 
-const requestPosts = (action) => ({ type: REQUEST_CALL, action });
+const requestGet = (apiPath) => ({ type: REQUEST_CALL, apiPath });
 
-const receivePosts = (apiPath, response) => ({
-    type: RECIEVE_CALL,
+const receiveGet = (apiPath, response, receiveAction) => ({
+    type: receiveAction,
     apiPath,
     response,
     receivedAt: Date.now()
@@ -45,8 +58,8 @@ const receivePosts = (apiPath, response) => ({
 export const login = (user, password) => {
   return (dispatch, getState, {apiFetch}) => {
       let token = btoa(user + ':' + password)
-      dispatch(requestPosts({apiPath: 'user/auth'}));
-      return apiFetch('user/auth', {}, token)
+      dispatch(requestGet({apiPath: LOGIN_CALL}));
+      return apiFetch(LOGIN_CALL, {}, token)
         .then(response => dispatch(loginSuccess(token)))
         .catch(err => console.warn('Failed Login'));
     };
