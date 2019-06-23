@@ -18,7 +18,7 @@ const About = () => (
     </Typography>
     <Grid container spacing={8}>
       <Grid item xs>
-        <LogoCard title="AWS" description="EC2 instance (RedHat 7)." image={awsLogo}
+        <LogoCard title="AWS" description="EC2 instance (RHEL 7)" image={awsLogo}
           link="https://aws.amazon.com/"/>
       </Grid>
       <Grid item xs>
