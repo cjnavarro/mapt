@@ -7,7 +7,7 @@ export default ApiHandler => (url, opts, token) => {
   //const combinedOptions = Object.assign({}, {}, opts)
 
   return (
-    fetch('http://localhost:80/api/' + url,
+    fetch('api/' + url,
       { method:'GET',
         mode: 'no-cors',
         headers: {
