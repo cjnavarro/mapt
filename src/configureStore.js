@@ -24,7 +24,7 @@ const store = createStore(
           store.dispatch(logout());
         }
 
-        window.location.href = '/#/login';
+        window.location.href = '/#/home';
       })
     }))
   );

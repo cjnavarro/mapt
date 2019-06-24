@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import  { Redirect } from 'react-router-dom';
+import  { Redirect, Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
 
 import TextField from '@material-ui/core/TextField';
@@ -52,7 +52,7 @@ const LoginContent = ({actions, message, loggedIn}) =>
               />
           </form>
           <DialogContentText>
-            { message }
+            { message } ... But you can still go <Link to="/about">here</Link>
           </DialogContentText>
         </DialogContent>
         <DialogActions>

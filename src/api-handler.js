@@ -18,7 +18,10 @@ export default ApiHandler => (url, opts, token) => {
         //console.log(res);
 
         if (res.status === 401) {
-          throw Error('rejected');
+          throw Error('REJECTED');
+        }
+        else if(res.status !== 200) {
+          throw Error('BAD RESPONSE')
         }
         else {
           // TODO enforce JSON
@@ -30,7 +33,7 @@ export default ApiHandler => (url, opts, token) => {
         }
       })
       .catch(err => {
-        if (err.message === 'rejected') {
+        if (err.message === 'REJECTED') {
           ApiHandler(url);
         }
 
