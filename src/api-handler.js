@@ -20,7 +20,7 @@ export default ApiHandler => (url, opts, token) => {
         if (res.status === 401) {
           throw Error('REJECTED');
         }
-        else if(res.status !== 200) {
+        else if(res.status !== 500) {
           throw Error('BAD RESPONSE')
         }
         else {
