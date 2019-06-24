@@ -52,7 +52,8 @@ const LoginContent = ({actions, message, loggedIn}) =>
               />
           </form>
           <DialogContentText>
-            { message } ... But you can still go <Link to="/about">here</Link>
+            { message }
+            { message && <div>... But you can still go <Link to="/about">here</Link></div> }
           </DialogContentText>
         </DialogContent>
         <DialogActions>
