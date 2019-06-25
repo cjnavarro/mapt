@@ -8,7 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 
-import '../App.css';
+import './LogoCard.css';
 
 const LogoCard = ({title, description, image, link}) => (
   <Card className="logo-card ">

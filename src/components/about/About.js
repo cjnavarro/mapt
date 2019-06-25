@@ -32,7 +32,7 @@ const About = () => (
           <LogoCard title={card.title} description={card.desc} image={card.image}
             link={card.link}/>
         </Grid>
-      ))};
+      ))}
     </Grid>
   </Navigation>
 );

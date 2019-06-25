@@ -19,9 +19,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Home from '@material-ui/icons/Home';
 import Info from '@material-ui/icons/Info';
 import Public from '@material-ui/icons/Public';
-import Motorcycle from '@material-ui/icons/Motorcycle';
+import FileCopy from '@material-ui/icons/FileCopy';
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 const styles = theme => ({
   root: {
@@ -149,7 +149,7 @@ const Navigation = ({ displayName, children, classes, theme}) => {
           </NavLink>
           <NavLink to="/resources">
             <ListItem button key="Resources">
-              <ListItemIcon><Motorcycle/></ListItemIcon>
+              <ListItemIcon><FileCopy/></ListItemIcon>
               <ListItemText primary="Resources" />
             </ListItem>
           </NavLink>

@@ -1,0 +1,9 @@
+.logo-card {
+  width: 20vw;
+  min-width: 250px;
+  margin: 0 auto;
+}
+
+.logo-card-image {
+  height: 20vh;
+}

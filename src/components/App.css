@@ -14,13 +14,5 @@
 
 .leaflet-container {
   min-height: 85vh;
-  min-width: 100vh;
-}
-
-.logo-card {
-  width: 25vh;
-}
-
-.logo-card-image {
-  min-height: 20vh;
+  min-width: 100vw;
 }
