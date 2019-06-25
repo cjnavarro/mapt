@@ -46,7 +46,7 @@ const MapContent = ({actions, token, loggedIn}) => {
       <LayerGroup ref={(map) => {
         if(map)
         {
-          t.addTo(map.leafletElement);
+          //t.addTo(map.leafletElement);
         }
         }}/>
       <MarkerClusterGroup>

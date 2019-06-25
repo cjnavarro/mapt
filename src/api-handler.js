@@ -23,7 +23,7 @@ export default ApiHandler => (url, opts, token) => {
         else if(res.status === 500) {
           throw Error('BAD RESPONSE')
         }
-        else if(url == LOGIN_CALL) {
+        else if(url === LOGIN_CALL) {
           if(res.status === 200)
           {
             return {};
