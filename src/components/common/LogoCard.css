@@ -1,9 +1,11 @@
 .logo-card {
-  width: 20vw;
-  min-width: 250px;
-  margin: 0 auto;
+  width: 250px;
+  height: 300px;
 }
 
 .logo-card-image {
-  height: 20vh;
+  max-height: 150px;
+  max-width: 150px;
+  padding: 15px;
+  margin: 0 auto;
 }

@@ -15,6 +15,7 @@ const LogoCard = ({title, description, image, link}) => (
     <CardActionArea>
         <CardMedia className="logo-card-image"
           image={image}
+          component="img"
           title={title}
         />
         <CardContent>
