@@ -15,7 +15,7 @@ import awsLogo from '../common/images/aws.png';
 const cards = [
   { title: 'AWS', image: awsLogo, desc: 'EC2 Instance', link: 'https://aws.amazon.com/' },
   { title: 'Dropwizard', image: dropWizardLogo, desc: 'Version 1.3.12', link: 'https://www.dropwizard.io/1.3.12/docs/getting-started.html' },
-  { title: 'MySql', image: mySqlLogo, desc: 'Version 8.0', link: 'https://www.mysql.com/' },
+  { title: 'MySQL', image: mySqlLogo, desc: 'Version 8.0', link: 'https://www.mysql.com/' },
   { title: 'ReactJS', image: reactLogo, desc: 'Version 16.8.6', link: 'https://reactjs.org/' },
   { title: 'Redux', image: reduxLogo, desc: 'Version 4.0.1', link: 'https://redux.js.org/' }
 ];
