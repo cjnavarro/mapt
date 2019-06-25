@@ -28,7 +28,7 @@ const About = () => (
 
     <Grid container spacing={8}>
       {cards.map(card => (
-        <Grid item xs>
+        <Grid item xs key={card.title}>
           <LogoCard title={card.title} description={card.desc} image={card.image}
             link={card.link}/>
         </Grid>
