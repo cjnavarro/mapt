@@ -21,8 +21,16 @@ const HomeContent = ({actions, token, loggedIn, user}) =>
 
   return (
     <div>
-      <Typography variant="h5" paragraph={true}>
+      <Typography variant="h5">
         Welcome { user.username.toUpperCase() }!
+      </Typography>
+
+      <Typography variant="body1" paragraph={true}>
+        This site is a constant work in progress, as I expore using new tools.
+      </Typography>
+
+      <Typography variant="body1" paragraph={true}>
+        If you can see this you've been authenticated using BasicCredentials!
       </Typography>
     </div>
   );

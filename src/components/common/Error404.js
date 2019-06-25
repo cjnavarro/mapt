@@ -6,6 +6,7 @@ export const Error404 = () =>
 (
   <Navigation displayName="Uh oh...">
     <div>Error 404</div>
+    Picure of a puppy here.
   </Navigation>
 );
 
