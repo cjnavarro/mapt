@@ -34,6 +34,7 @@ const LoginContent = ({actions, message, loggedIn}) =>
               onChange={(e) => setUser(e.target.value)}
               margin="dense"
               label="Username"
+              autoComplete="username"
               autoFocus
               fullWidth
               />
@@ -43,6 +44,7 @@ const LoginContent = ({actions, message, loggedIn}) =>
               margin="dense"
               label="Password"
               type="password"
+              autoComplete="current-password"
               fullWidth
               onKeyDown={(event) => {
                 if (event.keyCode === 13) {

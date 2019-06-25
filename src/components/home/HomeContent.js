@@ -22,7 +22,7 @@ const HomeContent = ({actions, token, loggedIn, user}) =>
   return (
     <div>
       <Typography variant="h5">
-        Welcome { user.username.toUpperCase() }!
+        Welcome {user.username.toUpperCase()}!
       </Typography>
 
       <Typography variant="body1" paragraph={true}>
@@ -30,7 +30,13 @@ const HomeContent = ({actions, token, loggedIn, user}) =>
       </Typography>
 
       <Typography variant="body1" paragraph={true}>
-        If you can see this you've been authenticated using BasicCredentials!
+        If you can see this you've been authenticated using <code>BasicCredentials</code>,
+        and have the user role of <code>{user.role}</code>.
+      </Typography>
+
+      <Typography variant="body1" paragraph={true}>
+        This pet project uses <code>Dropwizard</code> as it's Java framework for
+        developing RESTful web services.
       </Typography>
     </div>
   );
