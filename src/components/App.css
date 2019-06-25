@@ -13,6 +13,7 @@
 }
 
 .leaflet-container {
+  margin: 0 auto;
   min-height: 85vh;
-  min-width: 100vw;
+  min-width: 85vw;
 }
