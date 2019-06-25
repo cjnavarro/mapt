@@ -27,12 +27,13 @@ const About = () => (
     </Typography>
 
     <Grid container spacing={8}>
-      (cards.map(card) => {
+      {cards.map(card => (
         <Grid item xs>
           <LogoCard title={card.title} description={card.desc} image={card.image}
             link={card.link}/>
         </Grid>
-      });
+      ))};
+    </Grid>
   </Navigation>
 );
 
