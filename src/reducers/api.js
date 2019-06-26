@@ -8,6 +8,7 @@ const LOGIN_FAILURE = 'api/LOGIN_FAILURE';
 
 // Recieve strategies
 export const RECIEVE_USER = 'api/RECIEVE_USER';
+export const RECIEVE_PDF = 'api/RECIEVE_PDF';
 
 const initialState = {
   token: '',
@@ -32,7 +33,10 @@ export default function api(state = initialState, action) {
         ...state,
         user: action.response,
         apiPath,
-        receivedAt: Date.now()}
+        receivedAt: Date.now()
+      };
+    case RECIEVE_PDF:
+      return state;
     case LOGIN:
       return {
         ...state,

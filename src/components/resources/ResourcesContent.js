@@ -7,11 +7,16 @@ import Typography from '@material-ui/core/Typography';
 import PdfViewer from '../common/PdfViewer';
 import pdf from '../common/images/example.pdf';
 
+import { GET_PDF } from '../../constants/ApiCalls';
+import { RECIEVE_PDF } from '../../reducers/api';
+
 const ResourcesContent = ({actions, token, loggedIn}) => {
   // TODO Move to parent classes
   if(!loggedIn) {
     return <Redirect to='/login' />
   }
+
+  actions.sendGet(GET_PDF, token, RECIEVE_PDF);
 
   return (
     <div>
