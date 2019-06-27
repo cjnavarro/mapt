@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import  { Redirect } from 'react-router-dom';
 
 import Typography from '@material-ui/core/Typography';
+import FileCopy from '@material-ui/icons/FileCopy';
 
 import Timeline from '../common/Timeline';
 import { GET_PDF } from '../../constants/ApiCalls';
@@ -19,8 +20,12 @@ const ResourcesContent = ({actions, token, loggedIn}) => {
 
   return (
     <div>
-      <Typography variant="h5" paragraph={true} align="center">
-        You can download my PDF here... eventually!
+      <Typography variant="h5" paragraph={true}>
+        You can download my resume&ensp;
+        <a href="https://www.google.com" target="_blank">
+          <FileCopy/> here...
+        </a>
+        eventually!
       </Typography>
 
     <Timeline/>

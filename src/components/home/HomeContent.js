@@ -44,12 +44,12 @@ const HomeContent = ({actions, token, loggedIn, user}) =>
       </Typography>
 
       <IconButton>
-        <a href="https://github.com/cjnavarro">
+        <a href="https://github.com/cjnavarro" target="_blank">
           <img src={GitLogo}/>
         </a>
       </IconButton>
       <IconButton>
-        <a href="https://www.linkedin.com/in/cjnavarro/">
+        <a href="https://www.linkedin.com/in/cjnavarro/" target="_blank">
           <img src={LinkedInLogo}/>
         </a>
       </IconButton>
