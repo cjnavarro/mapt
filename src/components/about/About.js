@@ -11,13 +11,16 @@ import reduxLogo from '../common/images/redux.png';
 import mySqlLogo from '../common/images/mysql.png';
 import dropWizardLogo from '../common/images/dropwizard.png';
 import awsLogo from '../common/images/aws.png';
+import muiLogo from '../common/images/mui.png';
 
 const cards = [
   { title: 'AWS', image: awsLogo, desc: 'EC2 Instance', link: 'https://aws.amazon.com/' },
   { title: 'Dropwizard', image: dropWizardLogo, desc: 'Version 1.3.12', link: 'https://www.dropwizard.io/1.3.12/docs/getting-started.html' },
   { title: 'MySQL', image: mySqlLogo, desc: 'Version 8.0', link: 'https://www.mysql.com/' },
   { title: 'ReactJS', image: reactLogo, desc: 'Version 16.8.6', link: 'https://reactjs.org/' },
-  { title: 'Redux', image: reduxLogo, desc: 'Version 4.0.1', link: 'https://redux.js.org/' }
+  { title: 'Redux', image: reduxLogo, desc: 'Version 4.0.1', link: 'https://redux.js.org/' },
+  { title: 'Material-UI', image: muiLogo, desc: 'Version ~3.9.0', link: 'https://material-ui.com/' }
+
 ];
 
 const About = () => (
