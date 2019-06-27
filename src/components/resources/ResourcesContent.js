@@ -4,9 +4,7 @@ import  { Redirect } from 'react-router-dom';
 
 import Typography from '@material-ui/core/Typography';
 
-import PdfViewer from '../common/PdfViewer';
-import pdf from '../common/images/example.pdf';
-
+import Timeline from '../common/Timeline';
 import { GET_PDF } from '../../constants/ApiCalls';
 import { RECIEVE_PDF } from '../../reducers/api';
 
@@ -16,15 +14,15 @@ const ResourcesContent = ({actions, token, loggedIn}) => {
     return <Redirect to='/login' />
   }
 
-  actions.sendGet(GET_PDF, token, RECIEVE_PDF);
+  //actions.sendGet(GET_PDF, token, RECIEVE_PDF);
 
   return (
     <div>
       <Typography variant="h5" paragraph={true} align="center">
-        Enjoy this PDF, eventually to be served from our backend and restricted
-        to certain user roles.
+        You can download my PDF here... eventually!
       </Typography>
-      <PdfViewer file={pdf}/>
+
+    <Timeline/>
     </div>
   );
 };
