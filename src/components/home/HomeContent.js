@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import  { Redirect } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+
+import GitLogo from '../common/images/github.png';
+import LinkedInLogo from '../common/images/linkedin.png';
 
 import { GET_CURRENT_USER } from '../../constants/ApiCalls';
 import { RECIEVE_USER } from '../../reducers/api';
@@ -38,6 +42,17 @@ const HomeContent = ({actions, token, loggedIn, user}) =>
         This pet project uses <code>Dropwizard</code> as it's Java framework for
         developing RESTful web services.
       </Typography>
+
+      <IconButton>
+        <a href="https://github.com/cjnavarro">
+          <img src={GitLogo}/>
+        </a>
+      </IconButton>
+      <IconButton>
+        <a href="https://www.linkedin.com/in/cjnavarro/">
+          <img src={LinkedInLogo}/>
+        </a>
+      </IconButton>
     </div>
   );
 };
