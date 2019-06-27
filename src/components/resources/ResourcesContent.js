@@ -14,6 +14,7 @@ const ResourcesContent = ({actions, token, loggedIn}) => {
     return <Redirect to='/login' />
   }
 
+  // TODO download
   //actions.sendGet(GET_PDF, token, RECIEVE_PDF);
 
   return (
