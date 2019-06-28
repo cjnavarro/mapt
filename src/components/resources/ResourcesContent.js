@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import  { Redirect } from 'react-router-dom';
 
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import FileCopy from '@material-ui/icons/FileCopy';
 
 import Timeline from '../common/Timeline';
@@ -14,20 +15,15 @@ const ResourcesContent = ({actions, token, loggedIn}) => {
   if(!loggedIn) {
     return <Redirect to='/login' />
   }
-
-  // TODO download
-  //actions.sendGet(GET_PDF, token, RECIEVE_PDF);
-
+  
   return (
     <div>
       <Typography variant="h5" paragraph={true}>
         You can download my resume&ensp;
-        <a href="https://www.google.com" target="_blank">
-          <FileCopy/> here...
-        </a>
-        eventually!
+        <Button variant="outlined" onClick={() => actions.sendGet(GET_PDF, token, RECIEVE_PDF)} target="_blank">
+          <FileCopy/>&ensp;here
+        </Button>
       </Typography>
-
     <Timeline/>
     </div>
   );

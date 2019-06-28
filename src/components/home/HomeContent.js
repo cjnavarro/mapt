@@ -44,13 +44,13 @@ const HomeContent = ({actions, token, loggedIn, user}) =>
       </Typography>
 
       <IconButton>
-        <a href="https://github.com/cjnavarro" target="_blank">
-          <img src={GitLogo}/>
+        <a href="https://github.com/cjnavarro" target="_blank" rel="noopener noreferrer">
+          <img src={GitLogo} alt=""/>
         </a>
       </IconButton>
       <IconButton>
-        <a href="https://www.linkedin.com/in/cjnavarro/" target="_blank">
-          <img src={LinkedInLogo}/>
+        <a href="https://www.linkedin.com/in/cjnavarro/" target="_blank" rel="noopener noreferrer">
+          <img src={LinkedInLogo} alt=""/>
         </a>
       </IconButton>
     </div>

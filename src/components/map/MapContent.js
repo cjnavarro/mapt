@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import Typography from '@material-ui/core/Typography';
 
-import { Map, Marker, TileLayer, LayerGroup, Popup } from 'react-leaflet';
+import { Map, Marker, TileLayer, LayerGroup } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import L from 'leaflet';
 import terminator from 'leaflet-terminator';
