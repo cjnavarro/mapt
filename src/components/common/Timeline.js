@@ -37,7 +37,7 @@ const TimelineComp = () => (
       iconColor="#f07730"
     >
       <p>
-        Work in an agile environment within small software teams to develop software and tools to meet project goals.
+        Worked in an agile environment within small software teams to develop software and tools to meet project goals.
       </p>
       <p>
         Designed and built both modular Java applications and websites.
