@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import  { Redirect } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 
 import GitLogo from '../common/images/github.png';
 import LinkedInLogo from '../common/images/linkedin.png';
@@ -42,12 +43,18 @@ const HomeContent = ({actions, token, loggedIn, user}) =>
         developing RESTful web services.
       </Typography>
 
-        <a href="https://github.com/cjnavarro" target="_blank" rel="noopener noreferrer">
-          <img src={GitLogo} alt=""/>
-        </a>
-        <a href="https://www.linkedin.com/in/cjnavarro/" target="_blank" rel="noopener noreferrer">
-          <img src={LinkedInLogo} alt=""/>
-        </a>
+      <Grid container direction="row" spacing={8}>
+        <Grid>
+          <a href="https://github.com/cjnavarro" target="_blank" rel="noopener noreferrer">
+            <img src={GitLogo} alt=""/>
+          </a>
+        </Grid>
+        <Grid>
+          <a href="https://www.linkedin.com/in/cjnavarro/" target="_blank" rel="noopener noreferrer">
+            <img src={LinkedInLogo} alt=""/>
+          </a>
+        </Grid>
+      </Grid>
     </div>
   );
 };
