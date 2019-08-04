@@ -7,18 +7,14 @@ pipeline {
 
   }
   stages {
-    stage('Run Tests') {
+    stage('Build') {
       steps {
-        timestamps() {
-          echo 'Starting Tests'
-        }
-
-        sh '''npm install -g
-npm run test'''
-        timestamps() {
-          echo 'Finished Tests'
-        }
-
+        sh 'npm install -g'
+      }
+    }
+    stage('Test') {
+      steps {
+        sh 'npm run test'
       }
     }
   }
