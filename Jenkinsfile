@@ -9,12 +9,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '/usr/bin/npm install -g'
+        sh '/usr/local/bin/npm install -g'
       }
     }
     stage('Test') {
       steps {
-        sh '/usr/bin/npm run test'
+        sh '/usr/local/bin/npm run test'
       }
     }
   }
