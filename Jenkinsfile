@@ -2,6 +2,7 @@ pipeline {
   agent {
     docker {
       image 'node:10-alpine'
+      args '-v /usr/local/lib/node_modules:/usr/local/lib/node_modules'
     }
 
   }
@@ -12,7 +13,8 @@ pipeline {
           echo 'Starting Tests'
         }
 
-        sh 'npm run test'
+        sh '''npm install -g
+npm run test'''
         timestamps() {
           echo 'Finished Tests'
         }
